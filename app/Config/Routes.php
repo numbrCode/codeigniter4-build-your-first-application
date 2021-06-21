@@ -1,6 +1,4 @@
-<?php
-
-namespace Config;
+<?php namespace Config;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -24,23 +22,33 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
-/*
+/**
  * --------------------------------------------------------------------
  * Route Definitions
  * --------------------------------------------------------------------
  */
+		/* Build Your First Application */
+		/* https://codeigniter4.github.io/userguide/tutorial/index.html */
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index');	/* http://codeigniter4-build-your-first-application/ */
 
-/*
+$routes->match(['get', 'post'], 'news/create', 'News::create');		/* (git) $ php spark serve */ /* http://localhost:8080/news/create */
+/* http://http://codeigniter4-build-your-first-application/news/create */
+
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('news', 'News::index');							/* http://localhost:8080/news */ /* http://codeigniter4-build-your-first-application/news */
+$routes->get('(:any)', 'Pages::view/$1');
+
+
+/**
  * --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
  *
  * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
+ * need to it be able to override any defaults in this file. Environment
  * based routes is one such time. require() additional route files here
  * to make that happen.
  *
