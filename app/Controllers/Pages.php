@@ -6,6 +6,13 @@ use CodeIgniter\Controller;
 
 class Pages extends Controller
 {
+    /**
+    * --------------------------------------------------------------------------
+    *  Build Your First Application » Static pages
+    * --------------------------------------------------------------------------
+    *
+    *  {@link http://codeigniter.com/user_guide/tutorial/static_pages.html}
+    */
     public function index()
     {
         return view('welcome_message');

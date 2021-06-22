@@ -6,6 +6,13 @@ use CodeIgniter\Controller;
 
 class News extends Controller
 {
+    /**
+    * --------------------------------------------------------------------------
+    *  Build Your First Application » News section
+    * --------------------------------------------------------------------------
+    *
+    *   {@link http://codeigniter.com/user_guide/tutorial/news_section.html}
+    */
     public function index()
     {   /* localhost:8080/news */
         $model = new NewsModel();
