@@ -45,6 +45,9 @@ $RECYCLE.BIN/
 .vagrant
 Vagrantfile
 
+# Self
+ci4_byf_app.sql
+
 #-------------------------
 # Temporary Files
 #-------------------------
