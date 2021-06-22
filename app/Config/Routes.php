@@ -7,7 +7,7 @@ $routes = Services::routes();
 // can override as needed.
 if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
 {
-	require SYSTEMPATH . 'Config/Routes.php';
+    require SYSTEMPATH . 'Config/Routes.php';
 }
 
 /**
@@ -20,27 +20,39 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+// $routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /**
  * --------------------------------------------------------------------
  * Route Definitions
  * --------------------------------------------------------------------
  */
-		/* Build Your First Application */
-		/* https://codeigniter4.github.io/userguide/tutorial/index.html */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
-$routes->get('/', 'Home::index');	/* http://codeigniter4-build-your-first-application/ */
+/* Build Your First Application */
+/* http://codeigniter.com/user_guide/tutorial/static_pages.html#running-the-app */
 
-$routes->match(['get', 'post'], 'news/create', 'News::create');		/* (git) $ php spark serve */ /* http://localhost:8080/news/create */
-/* http://http://codeigniter4-build-your-first-application/news/create */
+/* $ php spark serve */
 
-$routes->get('news/(:segment)', 'News::view/$1');
-$routes->get('news', 'News::index');							/* http://localhost:8080/news */ /* http://codeigniter4-build-your-first-application/news */
-$routes->get('(:any)', 'Pages::view/$1');
+/* We get a performance increase by specifying the default
+/ route since we don't have to scan directories. */
+$routes->get('/', 'Home::index');	/* http://codeigniter4-build-your-first-application */
 
+$routes->match(['get', 'post'], 'news/create', 'News::create'); /* http://codeigniter4-build-your-first-application/news/create */
+$routes->get('news/(:segment)', 'News::view/$1');   /* http://codeigniter4-build-your-first-application/news/elvis-sighted */
+$routes->get('news', 'News::index');                /* http://codeigniter4-build-your-first-application/news */
+
+/* 404 - File Not Found | Cannot find the news item: elvis */   /* http://codeigniter4-build-your-first-application/news/elvis */
+
+$routes->get('pages', 'Pages');                         /* http://codeigniter4-build-your-first-application/pages */
+$routes->get('pages/index', 'Pages');                   /* http://codeigniter4-build-your-first-application/pages/index */
+$routes->get('pages/view', 'Pages::view');              /* http://codeigniter4-build-your-first-application/pages/view */
+$routes->get('pages/view/home', 'Pages::view/home');    /* http://codeigniter4-build-your-first-application/pages/view/home */
+$routes->get('pages/view/about', 'Pages::view/about');  /* http://codeigniter4-build-your-first-application/pages/view/about */
+
+/* 404 - File Not Found */ /* http://codeigniter4-build-your-first-application/pages/view/shop */
+
+$routes->get('(:any)', 'Pages::view/$1');   /* http://codeigniter4-build-your-first-application/home , http://codeigniter4-build-your-first-application/about */
 
 /**
  * --------------------------------------------------------------------
@@ -57,5 +69,5 @@ $routes->get('(:any)', 'Pages::view/$1');
  */
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
-	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
