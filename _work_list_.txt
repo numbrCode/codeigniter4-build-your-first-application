@@ -1,0 +1,40 @@
+English
+(Russian)
+
+1. Build Your First Application
+https://codeigniter.com/user_guide/tutorial/index.html
+
+2. git clone https://github.com/numbrCode/codeigniter4-build-your-first-application.git codeigniter4-build-your-first-application
+
+3. cd codeigniter4-build-your-first-application
+
+4. Copy from codeigniter4-build-your-first-application
+
+5. composer update
+
+6. git pull --rebase
+
+7. git push
+
+8. http://codeigniter4-build-your-first-application/news
+
+9. http://codeigniter4-build-your-first-application/news/create
+
+10. Database.php ('database' => 'ci4tutorial',)
+
+11. Migration. Seeds.
+
+12. php spark db:create ci4tutorial
+
+13. [ php spark make:migration CreateNewTable ]
+
+14. php spark migrate
+
+15. php spark migrate:status
+
+16. [ php spark make:seeder InsertNewsSeeder ]
+
+17. php spark db:seed InsertNewsSeeder
+
+18. http://codeigniter4-build-your-first-application/news/%D0%9F%D1%80%D0%BE%D0%B1%D0%B011
+

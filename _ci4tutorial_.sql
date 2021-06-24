@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 10 2020 г., 13:15
+-- Время создания: Июн 24 2021 г., 17:36
 -- Версия сервера: 10.1.38-MariaDB
 -- Версия PHP: 7.3.2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `ci4_byf_app`
+-- База данных: `ci4tutorial`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `migrations` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `version` varchar(255) NOT NULL,
-  `class` text NOT NULL,
+  `class` varchar(255) NOT NULL,
   `group` varchar(255) NOT NULL,
   `namespace` varchar(255) NOT NULL,
   `time` int(11) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
-(1, '2020-06-10-093806', 'App\\Database\\Migrations\\CreateNewTable', 'default', 'App', 1591784831, 1);
+(2, '2021-06-23-105607', 'App\\Database\\Migrations\\CreateNewTable', 'default', 'App', 1624448063, 1);
 
 -- --------------------------------------------------------
 
@@ -66,8 +66,7 @@ INSERT INTO `news` (`id`, `title`, `slug`, `body`) VALUES
 (1, 'Elvis sighted', 'elvis-sighted', 'Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
 (2, 'Say it isn\'t so!', 'say-it-isnt-so', 'Scientists conclude that some programmers have a sense of humor.'),
 (3, 'Caffeination, Yes!', 'caffeination-yes', 'World\'s largest coffee shop open onsite nested coffee shop for staff only.'),
-(4, 'Учебный заголовок новости', 'Учебный-заголовок-новости', 'Учебный текст новости'),
-(5, 'Проба заголовка', 'Проба-заголовка', 'Проба текста');
+(4, 'Проба11', 'Проба11', 'Проба22.\r\nПроба33.');
 
 --
 -- Индексы сохранённых таблиц
@@ -83,7 +82,8 @@ ALTER TABLE `migrations`
 -- Индексы таблицы `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `slug` (`slug`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -93,13 +93,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
