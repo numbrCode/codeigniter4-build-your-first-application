@@ -32,13 +32,13 @@ For XAMPP (windows):
 
 [Database Migrations](http://codeigniter.com/user_guide/dbmgmt/migration.html#database-migrations).  
  `php spark migrate`  
-[ php spark make:migration CreateNewTable ]
+For reference: [php spark make:migration CreateNewTable]
 
 `php spark migrate:status`
 
 [Database Seeding](http://codeigniter.com/user_guide/dbmgmt/seeds.html#database-seeding)  
 `php spark db:seed InsertNewsSeeder`  
-[ php spark make:seeder InsertNewsSeeder ]
+For reference: [php spark make:seeder InsertNewsSeeder]
 
 Links for working with the application :  
 http://codeigniter4-build-your-first-application/home
