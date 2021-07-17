@@ -14,17 +14,17 @@ This tutorial is intended to introduce you to the CodeIgniter4 framework and the
 `php composer.phar update`
  
 For XAMPP (windows):  
-1. C:\Windows\System32\drivers\etc\hosts  
+1. Insert into file `C:\Windows\System32\drivers\etc\hosts`  
 `127.0.0.1       codeigniter4-build-your-first-application`
  
-2. C:\xampp\apache\conf\extra\httpd-vhosts.conf  
-`<VirtualHost codeigniter4-build-your-first-application:80>  
-    ServerAdmin webmaster@codeigniter4-build-your-first-application  
-    DocumentRoot "C:/xampp/htdocs/www/codeigniter4-build-your-first-application/public"  
-    ServerName codeigniter4-build-your-first-application  
-    ErrorLog "logs/codeigniter4-build-your-first-application-error.log"  
-    CustomLog "logs/codeigniter4-build-your-first-application-access.log" common  
-</VirtualHost>`
+2. Insert into file `C:\xampp\apache\conf\extra\httpd-vhosts.conf`  
+`<VirtualHost codeigniter4-build-your-first-application:80>`  
+    `ServerAdmin webmaster@codeigniter4-build-your-first-application`  
+    `DocumentRoot "C:/xampp/htdocs/www/codeigniter4-build-your-first-application/public"`  
+    `ServerName codeigniter4-build-your-first-application`  
+    `ErrorLog "logs/codeigniter4-build-your-first-application-error.log"`  
+    `CustomLog "logs/codeigniter4-build-your-first-application-access.log" common`  
+`</VirtualHost>`
  
  Important files:  
 `codeigniter4-build-your-first-application/app/Config/Database.php`,  
@@ -43,7 +43,7 @@ For reference: [php spark make:migration CreateNewTable]
 `php spark db:seed InsertNewsSeeder`  
 For reference: [php spark make:seeder InsertNewsSeeder]
 
-Links for working with the application :  
+Links for working with the local application :  
 http://codeigniter4-build-your-first-application/home
 
 http://codeigniter4-build-your-first-application/about
