@@ -40,7 +40,7 @@ class CreateNewTable extends Migration
 				],
 		]);
 		$this->forge->addKey('id', TRUE);
-        $this->forge->addKey('slug');
+        	$this->forge->addKey('slug');
 		$this->forge->createTable('news');
 	}
 	public function down()
